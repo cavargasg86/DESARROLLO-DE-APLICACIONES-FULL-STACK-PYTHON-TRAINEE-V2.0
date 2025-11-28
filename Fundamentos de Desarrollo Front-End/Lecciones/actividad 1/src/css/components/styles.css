@@ -1,4 +1,8 @@
 body {
-    background-color: aliceblue;
+    background-color: lightblue;
+}
+
+.title {
+    color: red;
 }
 
