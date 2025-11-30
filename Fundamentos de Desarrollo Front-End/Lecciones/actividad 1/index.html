@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Web - Ejercicio HTML</title>
-    <link rel="stylesheet" href="src/css/components/styles.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
 </head>
-<body>
+
+<body class="container bg-primary-subtle">
     <!-- La etiqueta <header> se usa para definir el encabezado de la página o de una sección.
          Típicamente contiene elementos de navegación, logos, títulos principales y menús. -->
     <header>
-        <!-- La etiqueta <h1> define el encabezado más importante de la página.
-             Solo debe haber un h1 por página y representa el título principal del contenido. -->
-        <h1 class="title">Bienvenidos a Mi Sitio Web</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">BIENVENIDO A MI SITIO WEB</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link " href="#">Servicios</a>
+                        <a class="nav-link " href="#">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </nav>     
         
+        <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+                <h1>Este es un HERO simple y efectivo</h1>
+                <p>Este es un sitio web de ejemplo creado para demostrar el uso de etiquetas HTML semánticas.</p>
+            </div>
+        </div>
+    
         <!-- La etiqueta <p> define un párrafo de texto.
              Es uno de los elementos más comunes para organizar contenido textual. -->
         <p>Este es un sitio web de ejemplo creado para demostrar el uso de etiquetas HTML semánticas.</p>
@@ -23,23 +46,27 @@
     <!-- La etiqueta <section> agrupa contenido temáticamente relacionado.
          Se usa para dividir el documento en secciones lógicas con un propósito específico. -->
     <section>
-        <h2 class="title">Sección Principal</h2>
+        
+        <h2 class="text-danger">Sección Principal</h2>
         <p>Esta sección contiene el contenido principal de la página. Las secciones ayudan a organizar el contenido de manera semántica y facilitan la navegación tanto para usuarios como para motores de búsqueda.</p>
         
         <!-- La etiqueta <article> representa contenido independiente y auto-contenido.
              Podría ser un artículo de blog, noticia, comentario o cualquier contenido que tenga sentido por sí solo. -->
         <article>
-            <h3 class="title">Artículo: Introducción al HTML</h3>
+            <h3 class="text-danger">Artículo: Introducción al HTML</h3>
             <p>HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Define la estructura y el contenido de un sitio web mediante el uso de etiquetas.</p>
             <p>Las etiquetas semánticas como las que estamos usando aquí ayudan a dar significado al contenido, mejorando la accesibilidad y el SEO del sitio.</p>
             <p>A continuación agregaremos un CheatSheet con las etiquetas más importantes</p>
-
-            <img src="/Fundamentos de Desarrollo Front-End/Lecciones/actividad 1/src/assets/img/Fondo.webp" alt="Fondo Pantalla" width="400px" height="300px" >
-
+        
+            <div>
+                <img src="/Fundamentos de Desarrollo Front-End/Lecciones/actividad 1/src/assets/img/Fondo.webp" class="d-block mx-auto" alt="Fondo Pantalla" width="400px" height="300px">
+                <button class="btn btn-info d-block mx-auto mt-3" type="button" data-bs-toggle="popover" data-bs-title="Popover" data-bs-content="Esto es una alerta informativa">Enviar</button>
+            </div>
+            
         </article>
 
         <article>
-            <h3 class="title">Artículo: Importancia de la Estructura</h3>
+            <h3 class="text-danger">Artículo: Importancia de la Estructura</h3>
             <p>Una buena estructura HTML es fundamental para crear sitios web profesionales y accesibles. Permite que los navegadores, lectores de pantalla y motores de búsqueda comprendan mejor el contenido.</p>
         </article>
     </section>
@@ -47,7 +74,7 @@
     <!-- La etiqueta <aside> representa contenido complementario o secundario.
          Se usa para información relacionada pero no esencial, como barras laterales, notas o enlaces adicionales. -->
     <aside>
-        <h3 class="title">Contenido Relacionado</h3>
+        <h3 class="text-danger">Contenido Relacionado</h3>
         <p>Este es un contenido complementario que proporciona información adicional relacionada con el tema principal de la página.</p>
         <p>Aquí podrías incluir enlaces a recursos externos, publicidad, biografía del autor, o cualquier información secundaria.</p>
     </aside>
@@ -56,7 +83,15 @@
          Generalmente contiene información de copyright, enlaces de contacto, redes sociales o información del autor. -->
     <footer>
         <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
-        <p>Ejercicio de HTML - Lección 2</p>
+        <p>Ejercicio de HTML - Lección 4 Boostrap</p>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
 </body>
 </html>
